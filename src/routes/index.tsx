@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 
 function MenuPage() {
   const [theme, setTheme] = useState<Theme>("modern");
-  const [active, setActive] = useState(categories[0].id);
+  const [active, setActive] = useState(categories[0]!.id);
   const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
