@@ -145,3 +145,125 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── MenuSnap theme system ────────────────────────────────────────────
+   Layout is identical across themes; only colour, depth and radius shift.
+   Applied via data-theme on the page wrapper.                          */
+
+:root,
+[data-theme="modern"] {
+  --radius-card: 22px;
+  --background: oklch(0.985 0.006 85);
+  --foreground: oklch(0.21 0.012 60);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.012 60);
+  --primary: oklch(0.52 0.13 42);
+  --primary-foreground: oklch(0.99 0.005 85);
+  --muted: oklch(0.955 0.008 85);
+  --muted-foreground: oklch(0.53 0.018 60);
+  --accent: oklch(0.95 0.02 60);
+  --accent-foreground: oklch(0.24 0.02 60);
+  --border: oklch(0.9 0.008 75);
+  --shadow-card: 0 1px 2px oklch(0.3 0.02 60 / 0.05), 0 12px 32px -12px oklch(0.3 0.02 60 / 0.16);
+  --shadow-card-hover: 0 2px 4px oklch(0.3 0.02 60 / 0.06), 0 24px 48px -16px oklch(0.3 0.02 60 / 0.22);
+}
+
+[data-theme="dark"] {
+  --radius-card: 22px;
+  --background: oklch(0.17 0.008 260);
+  --foreground: oklch(0.97 0.004 260);
+  --card: oklch(0.223 0.01 260);
+  --card-foreground: oklch(0.97 0.004 260);
+  --primary: oklch(0.82 0.13 85);
+  --primary-foreground: oklch(0.19 0.01 260);
+  --muted: oklch(0.26 0.01 260);
+  --muted-foreground: oklch(0.72 0.012 260);
+  --accent: oklch(0.28 0.012 260);
+  --accent-foreground: oklch(0.96 0.004 260);
+  --border: oklch(1 0 0 / 10%);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.4), 0 16px 40px -16px oklch(0 0 0 / 0.6);
+  --shadow-card-hover: 0 2px 6px oklch(0 0 0 / 0.45), 0 28px 56px -18px oklch(0 0 0 / 0.7);
+}
+
+[data-theme="luxury"] {
+  --radius-card: 6px;
+  --background: oklch(0.14 0.006 60);
+  --foreground: oklch(0.95 0.01 85);
+  --card: oklch(0.185 0.008 60);
+  --card-foreground: oklch(0.95 0.01 85);
+  --primary: oklch(0.79 0.11 88);
+  --primary-foreground: oklch(0.16 0.01 60);
+  --muted: oklch(0.23 0.01 60);
+  --muted-foreground: oklch(0.71 0.02 80);
+  --accent: oklch(0.25 0.02 80);
+  --accent-foreground: oklch(0.93 0.02 85);
+  --border: oklch(0.79 0.11 88 / 22%);
+  --shadow-card: 0 1px 0 oklch(0.79 0.11 88 / 0.08), 0 18px 44px -20px oklch(0 0 0 / 0.75);
+  --shadow-card-hover: 0 1px 0 oklch(0.79 0.11 88 / 0.16), 0 30px 60px -22px oklch(0 0 0 / 0.85);
+}
+
+[data-theme="traditional"] {
+  --radius-card: 14px;
+  --background: oklch(0.965 0.018 75);
+  --foreground: oklch(0.26 0.05 40);
+  --card: oklch(0.99 0.01 80);
+  --card-foreground: oklch(0.26 0.05 40);
+  --primary: oklch(0.45 0.16 28);
+  --primary-foreground: oklch(0.98 0.01 80);
+  --muted: oklch(0.93 0.022 75);
+  --muted-foreground: oklch(0.48 0.04 45);
+  --accent: oklch(0.9 0.04 70);
+  --accent-foreground: oklch(0.3 0.06 40);
+  --border: oklch(0.86 0.03 70);
+  --shadow-card: 0 1px 2px oklch(0.35 0.06 45 / 0.08), 0 10px 26px -12px oklch(0.35 0.06 45 / 0.2);
+  --shadow-card-hover: 0 2px 5px oklch(0.35 0.06 45 / 0.1), 0 22px 44px -16px oklch(0.35 0.06 45 / 0.26);
+}
+
+[data-theme="minimal"] {
+  --radius-card: 4px;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.16 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0 0);
+  --primary: oklch(0.16 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.53 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.16 0 0);
+  --border: oklch(0.9 0 0);
+  --shadow-card: 0 0 0 1px oklch(0.9 0 0);
+  --shadow-card-hover: 0 0 0 1px oklch(0.78 0 0);
+}
+
+@keyframes menusnap-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility rise {
+  animation: menusnap-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+  }
+}
