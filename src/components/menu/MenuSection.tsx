@@ -1,10 +1,13 @@
 import type { Section } from "@/data/menu";
+import { sectionBadge, badgeMeta } from "@/data/highlights";
 
 function fmt(v: number | string) {
   return typeof v === "number" ? v.toLocaleString("en-IN") : v;
 }
 
 export function MenuSection({ section }: { section: Section }) {
+  const badgeKey = sectionBadge[section.id];
+  const badge = badgeKey ? badgeMeta[badgeKey] : null;
   return (
     <section id={section.id} className="scroll-mt-16 pt-11">
       <header className="mb-4">
@@ -20,7 +23,13 @@ export function MenuSection({ section }: { section: Section }) {
       </header>
 
       {section.image && (
-        <figure className="mb-5 overflow-hidden rounded-[10px]">
+        <figure className="relative mb-5 overflow-hidden rounded-[10px]">
+          {badge && (
+            <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-foreground backdrop-blur-sm">
+              <span aria-hidden>{badge.emoji}</span>
+              {badge.label}
+            </span>
+          )}
           <img
             src={section.image}
             alt={section.title}
