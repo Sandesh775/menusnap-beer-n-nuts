@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import logoImg from "@/assets/logo.png";
+import logoAsset from "@/assets/brand-logo.png.asset.json";
 import { MenuSection } from "@/components/menu/MenuSection";
+import { HighlightSheet } from "@/components/menu/HighlightSheet";
+import { highlights, type Highlight } from "@/data/highlights";
 import { restaurant, sections, type Section } from "@/data/menu";
 
 export const Route = createFileRoute("/")({
@@ -51,6 +53,7 @@ function filterSections(all: Section[], q: string): Section[] {
 
 function MenuPage() {
   const [query, setQuery] = useState("");
+  const [active, setActive] = useState<Highlight | null>(null);
   const visible = useMemo(() => filterSections(sections, query), [query]);
 
   return (
@@ -59,16 +62,14 @@ function MenuPage() {
         {/* Identity */}
         <header className="pt-9">
           <img
-            src={logoImg}
-            alt={`${restaurant.name} logo`}
-            width={512}
-            height={512}
-            className="h-12 w-12 rounded-full object-contain"
+            src={logoAsset.url}
+            alt={`${restaurant.name} — Restaurant & Bar logo`}
+            width={1664}
+            height={624}
+            className="w-full max-w-[320px] rounded-[10px] object-contain"
           />
-          <h1 className="mt-4 font-display text-[34px] leading-[1.05] tracking-[-0.02em]">
-            {restaurant.name}
-          </h1>
-          <p className="mt-1.5 text-[11.5px] uppercase tracking-[0.22em] text-muted-foreground">
+          <h1 className="sr-only">{restaurant.name} — Menu</h1>
+          <p className="mt-3 text-[11.5px] uppercase tracking-[0.22em] text-muted-foreground">
             {restaurant.kicker}
           </p>
 
@@ -80,7 +81,12 @@ function MenuPage() {
             <span aria-hidden>·</span>
             <span>{restaurant.hours}</span>
           </div>
-          <p className="mt-1 text-[13px] text-muted-foreground">{restaurant.location}</p>
+          <p className="mt-1 text-[13px] text-muted-foreground">
+            {restaurant.location} ·{" "}
+            <a href={`tel:${restaurant.phone}`} className="hover:text-foreground">
+              {restaurant.phone}
+            </a>
+          </p>
         </header>
 
         {/* Hero */}
@@ -104,6 +110,23 @@ function MenuPage() {
             aria-label="Search menu"
             className="w-full rounded-full border border-border bg-card px-4 py-2.5 text-[14px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/30"
           />
+        </div>
+
+        {/* Highlights */}
+        <div className="no-scrollbar -mx-5 mt-3 flex gap-2 overflow-x-auto px-5 py-1">
+          {highlights.map((h) => (
+            <button
+              key={h.key}
+              type="button"
+              onClick={() => setActive(h)}
+              className="shrink-0 rounded-full border border-border bg-card px-3.5 py-2 text-[13px] text-foreground transition-colors active:bg-accent"
+            >
+              <span className="mr-1.5" aria-hidden>
+                {h.emoji}
+              </span>
+              {h.label}
+            </button>
+          ))}
         </div>
 
         <p className="mt-6 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
@@ -144,6 +167,8 @@ function MenuPage() {
           </p>
         </footer>
       </main>
+
+      <HighlightSheet highlight={active} onClose={() => setActive(null)} />
     </div>
   );
 }
