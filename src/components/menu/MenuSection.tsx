@@ -1,10 +1,12 @@
 import type { Section } from "@/data/menu";
+import { sectionBadge, badgeMeta } from "@/data/highlights";
 
 function fmt(v: number | string) {
   return typeof v === "number" ? v.toLocaleString("en-IN") : v;
 }
 
 export function MenuSection({ section }: { section: Section }) {
+  const badge = sectionBadge[section.id] ? badgeMeta[sectionBadge[section.id]] : null;
   return (
     <section id={section.id} className="scroll-mt-16 pt-11">
       <header className="mb-4">
