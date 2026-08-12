@@ -32,12 +32,12 @@ export type Section = ListSection | TableSection;
 export const restaurant = {
   name: "Beer N Nuts",
   kicker: "Restaurant & Bar",
-  location: "Jhamsikhel, Lalitpur",
+  location: "Basantapur, Kathmandu",
   hours: "8:00 AM — 9:00 PM · Everyday",
   openUntil: "9:00 PM",
-  address: "Jhamsikhel Rd, Lalitpur 44700, Nepal",
-  phone: "+977 1 552 8890",
-  instagram: "@beernnuts",
+  address: "Basantapur, Kathmandu, Nepal",
+  phone: "9803339489",
+  instagram: "@beer_n_nuts_cafe",
   currency: "Rs.",
   hero: heroImg,
 };
