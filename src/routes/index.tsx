@@ -69,11 +69,8 @@ function MenuPage() {
             className="w-full max-w-[320px] rounded-[10px] object-contain"
           />
           <h1 className="sr-only">{restaurant.name} — Menu</h1>
-          <p className="mt-3 text-[11.5px] uppercase tracking-[0.22em] text-muted-foreground">
-            {restaurant.kicker}
-          </p>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-muted-foreground">
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 text-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Open now
