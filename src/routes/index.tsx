@@ -34,10 +34,16 @@ function filterSections(all: Section[], q: string): Section[] {
     const titleHit = s.title.toLowerCase().includes(query);
     if (s.kind === "list") {
       const items = titleHit ? s.items : s.items.filter((i) => i.name.toLowerCase().includes(query));
-      if (items.length) out.push({ ...s, items, image: undefined });
+      if (items.length) {
+        const { image: _img, ...rest } = s;
+        out.push({ ...rest, items });
+      }
     } else {
       const rows = titleHit ? s.rows : s.rows.filter((r) => r.name.toLowerCase().includes(query));
-      if (rows.length) out.push({ ...s, rows, image: undefined });
+      if (rows.length) {
+        const { image: _img, ...rest } = s;
+        out.push({ ...rest, rows });
+      }
     }
   }
   return out;
