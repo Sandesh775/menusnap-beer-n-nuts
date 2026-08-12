@@ -1,25 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroImg from "@/assets/hero.jpg";
 import logoImg from "@/assets/logo.png";
-import { MenuCard } from "@/components/menu/MenuCard";
-import { ThemeSwitcher, type Theme } from "@/components/menu/ThemeSwitcher";
-import { categories, menu, restaurant } from "@/data/menu";
+import { MenuSection } from "@/components/menu/MenuSection";
+import { restaurant, sections, type Section } from "@/data/menu";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maison Solail — Digital Menu | MenuSnap" },
+      { title: "Beer N Nuts — Menu | MenuSnap" },
       {
         name: "description",
         content:
-          "Scan-to-view digital menu for Maison Solail in Jhamsikhel: wood-fired pizza, momo, matcha and desserts with live prices.",
+          "The full Beer N Nuts Restaurant & Bar menu in Jhamsikhel: momo, Newari special, pizza, coffee, snacks, beer and hard drinks with live NPR prices.",
       },
-      { property: "og:title", content: "Maison Solail — Digital Menu" },
+      { property: "og:title", content: "Beer N Nuts — Digital Menu" },
       {
         property: "og:description",
-        content: "Wood fire, small plates and slow mornings. View the full menu.",
+        content: "Scan, scroll, order. The whole menu on one calm page.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,138 +26,109 @@ export const Route = createFileRoute("/")({
   component: MenuPage,
 });
 
+function filterSections(all: Section[], q: string): Section[] {
+  const query = q.trim().toLowerCase();
+  if (!query) return all;
+  const out: Section[] = [];
+  for (const s of all) {
+    const titleHit = s.title.toLowerCase().includes(query);
+    if (s.kind === "list") {
+      const items = titleHit ? s.items : s.items.filter((i) => i.name.toLowerCase().includes(query));
+      if (items.length) {
+        const { image: _img, ...rest } = s;
+        out.push({ ...rest, items });
+      }
+    } else {
+      const rows = titleHit ? s.rows : s.rows.filter((r) => r.name.toLowerCase().includes(query));
+      if (rows.length) {
+        const { image: _img, ...rest } = s;
+        out.push({ ...rest, rows });
+      }
+    }
+  }
+  return out;
+}
+
 function MenuPage() {
-  const [theme, setTheme] = useState<Theme>("modern");
-  const [active, setActive] = useState(categories[0]!.id);
-  const barRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sections = categories
-      .map((c) => document.getElementById(`section-${c.id}`))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (visible) setActive(visible.target.id.replace("section-", ""));
-      },
-      { rootMargin: "-96px 0px -60% 0px", threshold: 0 },
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const pill = barRef.current?.querySelector<HTMLElement>(`[data-cat="${active}"]`);
-    pill?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-  }, [active]);
+  const [query, setQuery] = useState("");
+  const visible = useMemo(() => filterSections(sections, query), [query]);
 
   return (
-    <div data-theme={theme} className="min-h-screen bg-background text-foreground">
-      <main className="mx-auto w-full max-w-[520px] pb-16">
-        {/* Hero */}
-        <header className="rise px-5 pt-7">
-          <div className="flex items-center gap-3">
-            <img
-              src={logoImg}
-              alt={`${restaurant.name} logo`}
-              width={512}
-              height={512}
-              className="h-11 w-11 rounded-full bg-card object-contain ring-1 ring-border"
-            />
-            <div className="min-w-0 flex-1">
-              <h1 className="font-display text-[22px] font-semibold leading-tight tracking-[-0.02em]">
-                {restaurant.name}
-              </h1>
-              <p className="mt-0.5 truncate text-[12px] text-muted-foreground">
-                {restaurant.tagline}
-              </p>
-            </div>
-            <span className="rounded-full bg-accent px-2.5 py-1 text-[12px] font-medium text-accent-foreground">
-              ★ {restaurant.rating}
-            </span>
-          </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <main className="mx-auto w-full max-w-[560px] px-5 pb-20">
+        {/* Identity */}
+        <header className="pt-9">
+          <img
+            src={logoImg}
+            alt={`${restaurant.name} logo`}
+            width={512}
+            height={512}
+            className="h-12 w-12 rounded-full object-contain"
+          />
+          <h1 className="mt-4 font-display text-[34px] leading-[1.05] tracking-[-0.02em]">
+            {restaurant.name}
+          </h1>
+          <p className="mt-1.5 text-[11.5px] uppercase tracking-[0.22em] text-muted-foreground">
+            {restaurant.kicker}
+          </p>
 
-          <div className="mt-4 flex items-center gap-2 text-[12px] text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1">
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5 text-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Open now · until 22:30
+              Open now
             </span>
-            <span className="truncate">{restaurant.location}</span>
+            <span aria-hidden>·</span>
+            <span>{restaurant.hours}</span>
           </div>
-
-          <figure className="mt-5 overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
-            <img
-              src={heroImg}
-              alt="Wood-fired pizza and steamed momo on a dark stone table"
-              width={1600}
-              height={1200}
-              className="aspect-[4/3] w-full object-cover"
-            />
-          </figure>
+          <p className="mt-1 text-[13px] text-muted-foreground">{restaurant.location}</p>
         </header>
 
-        {/* Sticky category bar */}
-        <nav className="sticky top-0 z-20 mt-6 bg-background/85 py-3 backdrop-blur-xl">
-          <div
-            ref={barRef}
-            className="no-scrollbar flex gap-2 overflow-x-auto scroll-smooth px-5"
-          >
-            {categories.map((c) => (
-              <a
-                key={c.id}
-                data-cat={c.id}
-                href={`#section-${c.id}`}
-                className={`shrink-0 rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
-                  active === c.id
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground"
-                }`}
-              >
-                <span className="mr-1.5">{c.emoji}</span>
-                {c.label}
-              </a>
-            ))}
-          </div>
-        </nav>
+        {/* Hero */}
+        <figure className="mt-6 overflow-hidden rounded-[12px]">
+          <img
+            src={restaurant.hero}
+            alt="Table of food at Beer N Nuts"
+            width={1600}
+            height={900}
+            className="aspect-[21/9] w-full object-cover"
+          />
+        </figure>
 
-        {/* Menu */}
-        <div className="px-5">
-          {categories.map((c) => {
-            const items = menu.filter((m) => m.category === c.id);
-            if (!items.length) return null;
-            return (
-              <section key={c.id} id={`section-${c.id}`} className="scroll-mt-20 pt-9">
-                <div className="mb-4 flex items-baseline justify-between">
-                  <h2 className="font-display text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    {c.label}
-                  </h2>
-                  <span className="text-[12px] tabular-nums text-muted-foreground/70">
-                    {items.length}
-                  </span>
-                </div>
-                <div className="flex flex-col gap-5">
-                  {items.map((item, i) => (
-                    <MenuCard key={item.id} item={item} index={i} />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+        {/* Search */}
+        <div className="mt-6">
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search menu"
+            aria-label="Search menu"
+            className="w-full rounded-full border border-border bg-card px-4 py-2.5 text-[14px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/30"
+          />
         </div>
 
+        <p className="mt-6 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+          All prices in {restaurant.currency} · Taxes included
+        </p>
+
+        {/* Menu */}
+        {visible.length === 0 ? (
+          <p className="py-16 text-center text-[14px] text-muted-foreground">
+            Nothing on the menu matches “{query}”.
+          </p>
+        ) : (
+          visible.map((s) => <MenuSection key={s.id} section={s} />)
+        )}
+
         {/* Footer */}
-        <footer className="mt-14 border-t border-border px-5 pt-8 text-[12.5px] leading-relaxed text-muted-foreground">
-          <p>📍 {restaurant.address}</p>
-          <p className="mt-1.5">
-            ☎{" "}
+        <footer className="mt-16 border-t border-border pt-7 text-[13px] leading-relaxed text-muted-foreground">
+          <p className="font-display text-[17px] text-foreground">{restaurant.name}</p>
+          <p className="mt-2">{restaurant.address}</p>
+          <p className="mt-1">
             <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
               {restaurant.phone}
             </a>
           </p>
-          <p className="mt-1.5">
+          <p className="mt-1">
             <a
               href={`https://instagram.com/${restaurant.instagram.slice(1)}`}
               target="_blank"
@@ -169,14 +138,10 @@ function MenuPage() {
               Instagram {restaurant.instagram}
             </a>
           </p>
-          <p className="mt-1.5">🕘 {restaurant.hours}</p>
-
-          <div className="mt-7">
-            <ThemeSwitcher theme={theme} onChange={setTheme} />
-            <p className="mt-4 text-center text-[11px] uppercase tracking-[0.22em] text-muted-foreground/60">
-              MenuSnap
-            </p>
-          </div>
+          <p className="mt-1">{restaurant.hours}</p>
+          <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground/60">
+            MenuSnap
+          </p>
         </footer>
       </main>
     </div>
