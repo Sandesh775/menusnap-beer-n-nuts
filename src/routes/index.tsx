@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Clock, Instagram, MapPin, Phone } from "lucide-react";
 
 import logoAsset from "@/assets/brand-logo.png.asset.json";
 import { MenuSection } from "@/components/menu/MenuSection";
 import { HighlightSheet } from "@/components/menu/HighlightSheet";
-import { highlights, type Highlight } from "@/data/highlights";
+import { DiscoveryTicker } from "@/components/menu/DiscoveryTicker";
+import { type Highlight } from "@/data/highlights";
 import { restaurant, sections, type Section } from "@/data/menu";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
