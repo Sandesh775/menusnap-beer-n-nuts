@@ -5,6 +5,10 @@ import beerImg from "@/assets/cat-beer.jpg";
 import newariImg from "@/assets/cat-newari.jpg";
 import momoImg from "@/assets/momo-steamed.jpg";
 import pizzaImg from "@/assets/pizza-margherita.jpg";
+import sandwichImg from "@/assets/cat-sandwich.jpg";
+import burgerImg from "@/assets/cat-burger.jpg";
+import noodlesImg from "@/assets/cat-noodles.jpg";
+import chowmeinImg from "@/assets/cat-chowmein.jpg";
 
 export type SimpleItem = { name: string; price: number | string };
 
@@ -91,6 +95,7 @@ export const sections: Section[] = [
     id: "sandwich",
     title: "Sandwich",
     kind: "list",
+    image: sandwichImg,
     items: [
       { name: "Veg Sandwich", price: 170 },
       { name: "Cheese Sandwich", price: 200 },
@@ -103,6 +108,7 @@ export const sections: Section[] = [
     title: "Burger",
     kind: "list",
     note: "With cheese",
+    image: burgerImg,
     items: [
       { name: "Veg Burger", price: 240 },
       { name: "Buff / Chicken Burger", price: 300 },
@@ -426,6 +432,7 @@ export const sections: Section[] = [
     id: "noodles",
     title: "Keema Noodles",
     kind: "list",
+    image: noodlesImg,
     items: [
       { name: "Buff Keema Noodles", price: 290 },
       { name: "Chicken Keema Noodles", price: 290 },
@@ -446,6 +453,7 @@ export const sections: Section[] = [
     id: "chowmein",
     title: "Chowmein / Thukpa",
     kind: "list",
+    image: chowmeinImg,
     items: [
       { name: "Veg", price: 170 },
       { name: "Egg", price: 220 },
