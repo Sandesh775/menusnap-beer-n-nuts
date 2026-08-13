@@ -165,8 +165,9 @@ function MenuPage() {
             </li>
           </ul>
 
-          <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground/60">
-            MenuSnap
+          <p className="mt-10 text-center text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground/60">
+            Powered by MenuSnap
+
           </p>
         </footer>
       </main>
