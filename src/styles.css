@@ -185,12 +185,33 @@
   animation: menusnap-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+@keyframes menusnap-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility ticker-track {
+  animation: menusnap-ticker 60s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
 
 @layer base {
   html {

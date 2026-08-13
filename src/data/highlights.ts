@@ -5,7 +5,14 @@ import snacksImg from "@/assets/cat-snacks.jpg";
 import newariImg from "@/assets/cat-newari.jpg";
 import beerImg from "@/assets/cat-beer.jpg";
 
-export type HighlightKey = "signature" | "bestseller" | "chefs" | "popular";
+export type HighlightKey =
+  | "signature"
+  | "bestseller"
+  | "chefs"
+  | "favorite"
+  | "special"
+  | "popular";
+
 
 export type Highlight = {
   key: HighlightKey;
@@ -59,6 +66,32 @@ export const highlights: Highlight[] = [
     ],
   },
   {
+    key: "favorite",
+    emoji: "❤️",
+    label: "Customer Favorite",
+    image: pizzaImg,
+    items: [
+      { name: "Chicken Momo (Fry)", price: 240 },
+      { name: "Veg Pizza (Medium)", price: 520 },
+      { name: "Chicken Keema Noodles", price: 300 },
+      { name: "Buff Sadheko", price: 280 },
+      { name: "Cold Coffee", price: 220 },
+    ],
+  },
+  {
+    key: "special",
+    emoji: "✨",
+    label: "Special",
+    image: beerImg,
+    items: [
+      { name: "Yomari (Chaku)", price: 160 },
+      { name: "Mixed Sizzler", price: 620 },
+      { name: "Shisha / Hukka", price: 800 },
+      { name: "Wine (Glass)", price: 350 },
+      { name: "Khaja Set (Chicken)", price: 420 },
+    ],
+  },
+  {
     key: "popular",
     emoji: "❤️",
     label: "Popular",
@@ -73,21 +106,24 @@ export const highlights: Highlight[] = [
   },
 ];
 
-/** Primary badge shown over a category's image — one label only. */
+/** Primary badge shown over a category's image — one label only. Owner-curated. */
 export const sectionBadge: Record<string, HighlightKey> = {
   momo: "signature",
   newari: "chefs",
   coffee: "popular",
   "chicken-snacks": "bestseller",
-  pizza: "chefs",
-  beer: "bestseller",
+  pizza: "favorite",
+  beer: "special",
 };
 
 export const badgeMeta: Record<HighlightKey, { emoji: string; label: string }> = {
   signature: { emoji: "⭐", label: "Signature" },
   bestseller: { emoji: "🔥", label: "Best Seller" },
   chefs: { emoji: "👨‍🍳", label: "Chef's Pick" },
+  favorite: { emoji: "❤️", label: "Customer Favorite" },
+  special: { emoji: "✨", label: "Special" },
   popular: { emoji: "❤️", label: "Popular" },
 };
+
 
 export { beerImg, pizzaImg };

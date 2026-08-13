@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Clock, Instagram, MapPin, Phone } from "lucide-react";
 
 import logoAsset from "@/assets/brand-logo.png.asset.json";
 import { MenuSection } from "@/components/menu/MenuSection";
 import { HighlightSheet } from "@/components/menu/HighlightSheet";
-import { highlights, type Highlight } from "@/data/highlights";
+import { DiscoveryTicker } from "@/components/menu/DiscoveryTicker";
+import { type Highlight } from "@/data/highlights";
 import { restaurant, sections, type Section } from "@/data/menu";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,17 +63,19 @@ function MenuPage() {
     <div className="min-h-screen bg-background text-foreground">
       <main className="mx-auto w-full max-w-[560px] px-5 pb-20">
         {/* Identity */}
-        <header className="pt-9">
+        <header className="pt-7 text-center">
           <img
             src={logoAsset.url}
             alt={`${restaurant.name} — Restaurant & Bar logo`}
             width={1664}
             height={624}
-            className="w-full max-w-[320px] rounded-[10px] object-contain"
+            className="mx-auto w-full max-w-[420px] object-contain"
           />
-          <h1 className="sr-only">{restaurant.name} — Menu</h1>
+          <h1 className="sr-only">
+            {restaurant.name} — {restaurant.kicker} Menu
+          </h1>
 
-          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-muted-foreground">
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[13px] text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 text-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Open now
@@ -78,12 +83,6 @@ function MenuPage() {
             <span aria-hidden>·</span>
             <span>{restaurant.hours}</span>
           </div>
-          <p className="mt-1 text-[13px] text-muted-foreground">
-            {restaurant.location} ·{" "}
-            <a href={`tel:${restaurant.phone}`} className="hover:text-foreground">
-              {restaurant.phone}
-            </a>
-          </p>
         </header>
 
         {/* Hero */}
@@ -109,24 +108,10 @@ function MenuPage() {
           />
         </div>
 
-        {/* Highlights */}
-        <div className="no-scrollbar -mx-5 mt-3 flex gap-2 overflow-x-auto px-5 py-1">
-          {highlights.map((h) => (
-            <button
-              key={h.key}
-              type="button"
-              onClick={() => setActive(h)}
-              className="shrink-0 rounded-full border border-border bg-card px-3.5 py-2 text-[13px] text-foreground transition-colors active:bg-accent"
-            >
-              <span className="mr-1.5" aria-hidden>
-                {h.emoji}
-              </span>
-              {h.label}
-            </button>
-          ))}
-        </div>
+        {/* Discovery ticker */}
+        <DiscoveryTicker onSelect={setActive} />
 
-        <p className="mt-6 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+        <p className="mt-4 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
           All prices in {restaurant.currency} · Taxes included
         </p>
 
@@ -140,25 +125,46 @@ function MenuPage() {
         )}
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-border pt-7 text-[13px] leading-relaxed text-muted-foreground">
-          <p className="font-display text-[17px] text-foreground">{restaurant.name}</p>
-          <p className="mt-2">{restaurant.address}</p>
-          <p className="mt-1">
-            <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
-              {restaurant.phone}
-            </a>
+        <footer className="mt-16 border-t border-border pt-8 text-[13.5px] leading-relaxed text-muted-foreground">
+          <p className="font-display text-[20px] leading-none text-foreground">
+            {restaurant.name}
           </p>
-          <p className="mt-1">
-            <a
-              href={`https://instagram.com/${restaurant.instagram.slice(1)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-foreground"
-            >
-              Instagram {restaurant.instagram}
-            </a>
+          <p className="mt-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+            {restaurant.kicker}
           </p>
-          <p className="mt-1">{restaurant.hours}</p>
+
+          <ul className="mt-5 space-y-2.5">
+            <li className="flex items-center gap-2.5">
+              <MapPin className="h-[15px] w-[15px] shrink-0 text-muted-foreground/70" />
+              <span>{restaurant.address}</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Phone className="h-[15px] w-[15px] shrink-0 text-muted-foreground/70" />
+              <a
+                href={`tel:${restaurant.phone.replace(/\s/g, "")}`}
+                className="transition-colors hover:text-foreground"
+              >
+                {restaurant.phone}
+              </a>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Clock className="h-[15px] w-[15px] shrink-0 text-muted-foreground/70" />
+              <span>{restaurant.hours}</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Instagram className="h-[15px] w-[15px] shrink-0 text-muted-foreground/70" />
+              <a
+                href={`https://instagram.com/${restaurant.instagram.slice(1)}`}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Instagram ${restaurant.instagram}`}
+                className="transition-colors hover:text-foreground"
+              >
+                {restaurant.instagram}
+              </a>
+            </li>
+          </ul>
+
           <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground/60">
             MenuSnap
           </p>
@@ -169,3 +175,4 @@ function MenuPage() {
     </div>
   );
 }
+
