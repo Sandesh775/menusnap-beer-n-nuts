@@ -5,7 +5,14 @@ import snacksImg from "@/assets/cat-snacks.jpg";
 import newariImg from "@/assets/cat-newari.jpg";
 import beerImg from "@/assets/cat-beer.jpg";
 
-export type HighlightKey = "signature" | "bestseller" | "chefs" | "popular";
+export type HighlightKey =
+  | "signature"
+  | "bestseller"
+  | "chefs"
+  | "favorite"
+  | "special"
+  | "popular";
+
 
 export type Highlight = {
   key: HighlightKey;
