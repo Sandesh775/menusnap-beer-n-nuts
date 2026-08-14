@@ -15,7 +15,7 @@ export function HighlightSheet({
 }) {
   return (
     <Drawer open={!!highlight} onOpenChange={(o) => !o && onClose()}>
-      <DrawerContent className="mx-auto max-w-[560px] border-border bg-background">
+      <DrawerContent className="mx-auto max-w-[480px] border-border bg-background">
         {highlight && (
           <div className="max-h-[78vh] overflow-y-auto px-5 pb-9">
             <div className="flex items-center justify-between pt-2">

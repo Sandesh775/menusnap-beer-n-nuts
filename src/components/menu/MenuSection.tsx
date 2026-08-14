@@ -34,6 +34,7 @@ export function MenuSection({ section }: { section: Section }) {
             src={section.image}
             alt={section.title}
             loading="lazy"
+            decoding="async"
             width={1200}
             height={800}
             className="aspect-[16/9] w-full object-cover"
@@ -58,7 +59,7 @@ export function MenuSection({ section }: { section: Section }) {
           ))}
         </ul>
       ) : (
-        <div className="-mx-5 overflow-x-auto px-5">
+        <div className="-mx-5 overflow-x-auto overscroll-x-contain px-5 [-webkit-overflow-scrolling:touch]">
           <table className="w-full min-w-max border-collapse text-[14.5px]">
             <thead>
               <tr>
