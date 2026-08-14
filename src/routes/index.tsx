@@ -61,7 +61,7 @@ function MenuPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className="mx-auto w-full max-w-[560px] px-5 pb-20">
+      <main className="mx-auto w-full max-w-[480px] px-5 pb-20 md:border-x md:border-border/60">
         {/* Identity */}
         <header className="pt-7 text-center">
           <img
@@ -69,7 +69,9 @@ function MenuPage() {
             alt={`${restaurant.name} — Restaurant & Bar logo`}
             width={1664}
             height={624}
-            className="mx-auto w-full max-w-[420px] object-contain"
+            fetchPriority="high"
+            decoding="async"
+            className="mx-auto w-full max-w-[380px] object-contain"
           />
           <h1 className="sr-only">
             {restaurant.name} — {restaurant.kicker} Menu
@@ -90,6 +92,8 @@ function MenuPage() {
           <img
             src={restaurant.hero}
             alt="Table of food at Beer N Nuts"
+            decoding="async"
+            fetchPriority="high"
             width={1600}
             height={900}
             className="aspect-[21/9] w-full object-cover"
@@ -104,7 +108,7 @@ function MenuPage() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search menu"
             aria-label="Search menu"
-            className="w-full rounded-full border border-border bg-card px-4 py-2.5 text-[14px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/30"
+            className="w-full rounded-full border border-border bg-card px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/30"
           />
         </div>
 

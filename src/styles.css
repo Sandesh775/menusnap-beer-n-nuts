@@ -220,5 +220,17 @@
   body {
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-sans);
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .ticker-track {
+      animation: none;
+    }
   }
 }

@@ -18,7 +18,7 @@ export function DiscoveryTicker({ onSelect }: { onSelect: (h: Highlight) => void
             onClick={() => onSelect(h)}
             aria-hidden={i >= highlights.length}
             tabIndex={i >= highlights.length ? -1 : 0}
-            className="flex shrink-0 items-center gap-3 text-[12.5px] tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground active:text-foreground"
+            className="flex min-h-11 shrink-0 items-center gap-3 py-1 text-[12.5px] tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground active:text-foreground"
           >
             <span className="whitespace-nowrap">
               <span className="mr-1.5" aria-hidden>
