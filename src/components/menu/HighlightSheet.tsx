@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Drawer, DrawerContent, DrawerTitle, DrawerClose } from "@/components/ui/drawer";
 import { X } from "lucide-react";
 import type { Highlight } from "@/data/highlights";
@@ -13,8 +14,26 @@ export function HighlightSheet({
   highlight: Highlight | null;
   onClose: () => void;
 }) {
+  // The overlay is temporary: dismissing it must return the customer to the
+  // exact place in the menu they were reading.
+  const scrollY = useRef(0);
+  const open = !!highlight;
+
+  useEffect(() => {
+    if (open) {
+      scrollY.current = window.scrollY;
+      return;
+    }
+    const y = scrollY.current;
+    const restore = () => window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
+    restore();
+    const t = window.setTimeout(restore, 350);
+    return () => window.clearTimeout(t);
+  }, [open]);
+
   return (
-    <Drawer open={!!highlight} onOpenChange={(o) => !o && onClose()}>
+    <Drawer open={open} onOpenChange={(o) => !o && onClose()}>
+
       <DrawerContent className="mx-auto max-w-[480px] border-border bg-background">
         {highlight && (
           <div className="max-h-[78vh] overflow-y-auto px-5 pb-9">
