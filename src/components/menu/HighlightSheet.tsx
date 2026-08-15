@@ -27,12 +27,18 @@ export function HighlightSheet({
     const y = scrollY.current;
     const restore = () => window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
     restore();
-    const t = window.setTimeout(restore, 350);
-    return () => window.clearTimeout(t);
+    let frame = 0;
+    const start = performance.now();
+    const tick = () => {
+      restore();
+      if (performance.now() - start < 700) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [open]);
 
   return (
-    <Drawer open={open} onOpenChange={(o) => !o && onClose()}>
+    <Drawer shouldScaleBackground={false} open={open} onOpenChange={(o) => !o && onClose()}>
 
       <DrawerContent className="mx-auto max-w-[480px] border-border bg-background">
         {highlight && (
