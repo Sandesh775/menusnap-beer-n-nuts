@@ -4,10 +4,7 @@ export function DiscoveryTicker({ onSelect }: { onSelect: (h: Highlight) => void
   const loop = [...highlights, ...highlights];
 
   return (
-    <div
-      className="group relative -mx-5 overflow-hidden py-2"
-      aria-label="Discover highlights"
-    >
+    <div className="group relative -mx-5 overflow-hidden py-2" aria-label="Discover highlights">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-background to-transparent" />
       <div className="ticker-track flex w-max items-center gap-6 pl-5 hover:[animation-play-state:paused]">

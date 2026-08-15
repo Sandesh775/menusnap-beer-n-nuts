@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Drawer, DrawerContent, DrawerTitle, DrawerClose } from "@/components/ui/drawer";
 import { X } from "lucide-react";
 import type { Highlight } from "@/data/highlights";
@@ -13,9 +14,47 @@ export function HighlightSheet({
   highlight: Highlight | null;
   onClose: () => void;
 }) {
+  // The overlay is temporary: dismissing it must return the customer to the
+  // exact place in the menu they were reading. The position is tracked while the
+  // sheet is closed, because opening it locks (and resets) the page scroll.
+  const scrollY = useRef(0);
+  const wasOpen = useRef(false);
+  const open = !!highlight;
+
+  useEffect(() => {
+    if (open) return;
+    const onScroll = () => {
+      scrollY.current = window.scrollY;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+      return;
+    }
+    if (!wasOpen.current) return;
+    wasOpen.current = false;
+    const y = scrollY.current;
+    const restore = () => window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
+    restore();
+    const t = window.setTimeout(restore, 60);
+    const t2 = window.setTimeout(restore, 400);
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+    };
+  }, [open]);
+
   return (
-    <Drawer open={!!highlight} onOpenChange={(o) => !o && onClose()}>
-      <DrawerContent className="mx-auto max-w-[480px] border-border bg-background">
+    <Drawer shouldScaleBackground={false} open={open} onOpenChange={(o) => !o && onClose()}>
+      <DrawerContent
+        onCloseAutoFocus={(e) => e.preventDefault()}
+        className="mx-auto max-w-[480px] border-border bg-background"
+      >
         {highlight && (
           <div className="max-h-[78vh] overflow-y-auto px-5 pb-9">
             <div className="flex items-center justify-between pt-2">
