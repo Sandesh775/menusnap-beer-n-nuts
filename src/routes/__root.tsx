@@ -76,20 +76,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MenuSnap — Digital Restaurant Menu" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
+      },
+      { title: "Beer N Nuts — Restaurant & Bar | Digital Menu" },
       {
         name: "description",
-        content: "A premium scan-to-view digital menu. One page, no ordering, just the food.",
+        content:
+          "Explore the Beer N Nuts restaurant and bar menu, including food, drinks, coffee, snacks and more.",
       },
-      { property: "og:title", content: "MenuSnap — Digital Restaurant Menu" },
-      {
-        property: "og:description",
-        content: "A premium scan-to-view digital menu. One page, no ordering, just the food.",
-      },
+      { property: "og:site_name", content: "MenuSnap" },
       { property: "og:type", content: "website" },
+      { name: "theme-color", content: "#faf7f1" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+
     links: [
       {
         rel: "stylesheet",
