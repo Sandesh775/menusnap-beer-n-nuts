@@ -17,28 +17,31 @@ export function HighlightSheet({
   // The overlay is temporary: dismissing it must return the customer to the
   // exact place in the menu they were reading.
   const scrollY = useRef(0);
+  const wasOpen = useRef(false);
   const open = !!highlight;
 
   useEffect(() => {
     if (open) {
       scrollY.current = window.scrollY;
+      wasOpen.current = true;
       return;
     }
+    if (!wasOpen.current) return;
+    wasOpen.current = false;
     const y = scrollY.current;
     const restore = () => window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
     restore();
-    let frame = 0;
-    const start = performance.now();
-    const tick = () => {
-      restore();
-      if (performance.now() - start < 700) frame = requestAnimationFrame(tick);
+    const t = window.setTimeout(restore, 60);
+    const t2 = window.setTimeout(restore, 400);
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
     };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
   }, [open]);
 
   return (
     <Drawer shouldScaleBackground={false} open={open} onOpenChange={(o) => !o && onClose()}>
+
 
       <DrawerContent
         onCloseAutoFocus={(e) => e.preventDefault()}
