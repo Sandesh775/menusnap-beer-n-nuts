@@ -15,14 +15,24 @@ export function HighlightSheet({
   onClose: () => void;
 }) {
   // The overlay is temporary: dismissing it must return the customer to the
-  // exact place in the menu they were reading.
+  // exact place in the menu they were reading. The position is tracked while the
+  // sheet is closed, because opening it locks (and resets) the page scroll.
   const scrollY = useRef(0);
   const wasOpen = useRef(false);
   const open = !!highlight;
 
   useEffect(() => {
-    if (open) {
+    if (open) return;
+    const onScroll = () => {
       scrollY.current = window.scrollY;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
       wasOpen.current = true;
       return;
     }
@@ -38,6 +48,7 @@ export function HighlightSheet({
       window.clearTimeout(t2);
     };
   }, [open]);
+
 
   return (
     <Drawer shouldScaleBackground={false} open={open} onOpenChange={(o) => !o && onClose()}>
