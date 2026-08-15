@@ -6,13 +6,7 @@ import newariImg from "@/assets/cat-newari.jpg";
 import beerImg from "@/assets/cat-beer.jpg";
 
 export type HighlightKey =
-  | "signature"
-  | "bestseller"
-  | "chefs"
-  | "favorite"
-  | "special"
-  | "popular";
-
+  "signature" | "bestseller" | "chefs" | "favorite" | "special" | "popular";
 
 export type Highlight = {
   key: HighlightKey;
@@ -124,6 +118,5 @@ export const badgeMeta: Record<HighlightKey, { emoji: string; label: string }> =
   special: { emoji: "✨", label: "Special" },
   popular: { emoji: "❤️", label: "Popular" },
 };
-
 
 export { beerImg, pizzaImg };

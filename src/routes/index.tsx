@@ -9,7 +9,6 @@ import { DiscoveryTicker } from "@/components/menu/DiscoveryTicker";
 import { type Highlight } from "@/data/highlights";
 import { restaurant, sections, type Section } from "@/data/menu";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -62,7 +61,9 @@ function filterSections(all: Section[], q: string): Section[] {
   for (const s of all) {
     const titleHit = s.title.toLowerCase().includes(query);
     if (s.kind === "list") {
-      const items = titleHit ? s.items : s.items.filter((i) => i.name.toLowerCase().includes(query));
+      const items = titleHit
+        ? s.items
+        : s.items.filter((i) => i.name.toLowerCase().includes(query));
       if (items.length) {
         const { image: _img, ...rest } = s;
         out.push({ ...rest, items });
@@ -154,9 +155,7 @@ function MenuPage() {
 
         {/* Footer */}
         <footer className="mt-16 border-t border-border pt-8 text-[13.5px] leading-relaxed text-muted-foreground">
-          <p className="font-display text-[20px] leading-none text-foreground">
-            {restaurant.name}
-          </p>
+          <p className="font-display text-[20px] leading-none text-foreground">{restaurant.name}</p>
           <p className="mt-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
             {restaurant.kicker}
           </p>
@@ -195,7 +194,6 @@ function MenuPage() {
 
           <p className="mt-10 text-center text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground/60">
             Powered by MenuSnap
-
           </p>
         </footer>
       </main>
@@ -204,4 +202,3 @@ function MenuPage() {
     </div>
   );
 }
-
