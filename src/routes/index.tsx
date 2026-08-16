@@ -90,7 +90,7 @@ function MenuPage() {
         {/* Identity */}
         <header className="pt-7 text-center">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt={`${restaurant.name} — Restaurant & Bar logo`}
             width={1664}
             height={624}
