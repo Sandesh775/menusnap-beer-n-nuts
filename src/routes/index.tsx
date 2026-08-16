@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Instagram, MapPin, Phone } from "lucide-react";
 
-import logoAsset from "@/assets/brand-logo.png.asset.json";
+import logoUrl from "@/assets/beer-n-nuts-logo.png";
 import { MenuSection } from "@/components/menu/MenuSection";
 import { HighlightSheet } from "@/components/menu/HighlightSheet";
 import { DiscoveryTicker } from "@/components/menu/DiscoveryTicker";
@@ -90,7 +90,7 @@ function MenuPage() {
         {/* Identity */}
         <header className="pt-7 text-center">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt={`${restaurant.name} — Restaurant & Bar logo`}
             width={1664}
             height={624}
