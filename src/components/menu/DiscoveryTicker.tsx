@@ -1,7 +1,15 @@
-import { highlights, type Highlight } from "@/data/highlights";
+import { highlights as defaultHighlights, type Highlight } from "@/data/highlights";
 
-export function DiscoveryTicker({ onSelect }: { onSelect: (h: Highlight) => void }) {
-  const loop = [...highlights, ...highlights];
+export function DiscoveryTicker({
+  onSelect,
+  items,
+}: {
+  onSelect: (h: Highlight) => void;
+  items?: Highlight[];
+}) {
+  const list = items ?? defaultHighlights;
+  if (list.length === 0) return null;
+  const loop = [...list, ...list];
 
   return (
     <div className="group relative -mx-5 overflow-hidden py-2" aria-label="Discover highlights">
@@ -13,8 +21,8 @@ export function DiscoveryTicker({ onSelect }: { onSelect: (h: Highlight) => void
             key={`${h.key}-${i}`}
             type="button"
             onClick={() => onSelect(h)}
-            aria-hidden={i >= highlights.length}
-            tabIndex={i >= highlights.length ? -1 : 0}
+            aria-hidden={i >= list.length}
+            tabIndex={i >= list.length ? -1 : 0}
             className="flex min-h-11 shrink-0 items-center gap-3 py-1 text-[12.5px] tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground active:text-foreground"
           >
             <span className="whitespace-nowrap">

@@ -1,0 +1,1642 @@
+{
+  "slug": "beer-n-nuts",
+  "restaurant": {
+    "name": "Beer N Nuts",
+    "kicker": "Restaurant & Bar",
+    "location": "Basantapur, Kathmandu",
+    "hours": "8:00 AM — 9:00 PM · Everyday",
+    "openUntil": "9:00 PM",
+    "address": "Basantapur, Kathmandu, Nepal",
+    "phone": "9803339489",
+    "instagram": "@beer_n_nuts_cafe",
+    "currency": "Rs.",
+    "hero": "hero",
+    "logo": "beer-n-nuts-logo"
+  },
+  "categories": [
+    {
+      "id": "breakfast",
+      "title": "Breakfast & Light Meals",
+      "kind": "list",
+      "items": [
+        {
+          "id": "breakfast-simple-breakfast",
+          "name": "Simple Breakfast",
+          "price": 400
+        },
+        {
+          "id": "breakfast-grilled-breakfast",
+          "name": "Grilled Breakfast",
+          "price": 475
+        },
+        {
+          "id": "breakfast-american-breakfast",
+          "name": "American Breakfast",
+          "price": 475
+        }
+      ]
+    },
+    {
+      "id": "toast",
+      "title": "Toast",
+      "kind": "list",
+      "items": [
+        {
+          "id": "toast-plain-toast",
+          "name": "Plain Toast",
+          "price": 40
+        },
+        {
+          "id": "toast-butter-toast",
+          "name": "Butter Toast",
+          "price": 60
+        },
+        {
+          "id": "toast-cheese-toast",
+          "name": "Cheese Toast",
+          "price": 120
+        },
+        {
+          "id": "toast-french-toast",
+          "name": "French Toast",
+          "price": 120
+        }
+      ]
+    },
+    {
+      "id": "eggs",
+      "title": "Eggs",
+      "kind": "list",
+      "items": [
+        {
+          "id": "eggs-boiled-eggs",
+          "name": "Boiled Eggs",
+          "price": 100
+        },
+        {
+          "id": "eggs-plain-omelet",
+          "name": "Plain Omelet",
+          "price": 120
+        },
+        {
+          "id": "eggs-masala-omelet",
+          "name": "Masala Omelet",
+          "price": 150
+        },
+        {
+          "id": "eggs-cheese-omelet",
+          "name": "Cheese Omelet",
+          "price": 250
+        }
+      ]
+    },
+    {
+      "id": "soup",
+      "title": "Soup",
+      "kind": "list",
+      "items": [
+        {
+          "id": "soup-veg-soup",
+          "name": "Veg Soup",
+          "price": 160
+        },
+        {
+          "id": "soup-mushroom-soup",
+          "name": "Mushroom Soup",
+          "price": 200
+        },
+        {
+          "id": "soup-chicken-soup",
+          "name": "Chicken Soup",
+          "price": 220
+        },
+        {
+          "id": "soup-chicken-mushroom-soup",
+          "name": "Chicken Mushroom Soup",
+          "price": 250
+        },
+        {
+          "id": "soup-hot-sour-soup",
+          "name": "Hot & Sour Soup",
+          "price": 250
+        }
+      ]
+    },
+    {
+      "id": "sandwich",
+      "title": "Sandwich",
+      "kind": "list",
+      "image": "cat",
+      "items": [
+        {
+          "id": "sandwich-veg-sandwich",
+          "name": "Veg Sandwich",
+          "price": 170
+        },
+        {
+          "id": "sandwich-cheese-sandwich",
+          "name": "Cheese Sandwich",
+          "price": 200
+        },
+        {
+          "id": "sandwich-chicken-sandwich",
+          "name": "Chicken Sandwich",
+          "price": 250
+        },
+        {
+          "id": "sandwich-club-sandwich",
+          "name": "Club Sandwich",
+          "price": 300
+        }
+      ]
+    },
+    {
+      "id": "burger",
+      "title": "Burger",
+      "kind": "list",
+      "note": "With cheese",
+      "image": "cat-burger",
+      "items": [
+        {
+          "id": "burger-veg-burger",
+          "name": "Veg Burger",
+          "price": 240
+        },
+        {
+          "id": "burger-buff-chicken-burger",
+          "name": "Buff / Chicken Burger",
+          "price": 300
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "title": "Coffee",
+      "kind": "list",
+      "image": "cat-coffee",
+      "badge": "popular",
+      "items": [
+        {
+          "id": "coffee-espresso",
+          "name": "Espresso",
+          "price": 100
+        },
+        {
+          "id": "coffee-doppio",
+          "name": "Doppio",
+          "price": 160
+        },
+        {
+          "id": "coffee-americano-single",
+          "name": "Americano Single",
+          "price": 120
+        },
+        {
+          "id": "coffee-americano-double",
+          "name": "Americano Double",
+          "price": 160
+        },
+        {
+          "id": "coffee-cappuccino",
+          "name": "Cappuccino",
+          "price": 140
+        },
+        {
+          "id": "coffee-caf-latte",
+          "name": "Café Latte",
+          "price": 160
+        },
+        {
+          "id": "coffee-honey-latte",
+          "name": "Honey Latte",
+          "price": 190
+        },
+        {
+          "id": "coffee-caramel-latte",
+          "name": "Caramel Latte",
+          "price": 190
+        },
+        {
+          "id": "coffee-caramel-macchiato",
+          "name": "Caramel Macchiato",
+          "price": 170
+        },
+        {
+          "id": "coffee-cafe-mocha",
+          "name": "Cafe Mocha",
+          "price": 180
+        },
+        {
+          "id": "coffee-affogato",
+          "name": "Affogato",
+          "price": 220
+        }
+      ]
+    },
+    {
+      "id": "coffee-alternatives",
+      "title": "Coffee Alternatives",
+      "kind": "list",
+      "items": [
+        {
+          "id": "coffee-alternatives-hot-chocolate",
+          "name": "Hot Chocolate",
+          "price": 150
+        },
+        {
+          "id": "coffee-alternatives-black-tea",
+          "name": "Black Tea",
+          "price": 50
+        },
+        {
+          "id": "coffee-alternatives-green-tea",
+          "name": "Green Tea",
+          "price": 50
+        },
+        {
+          "id": "coffee-alternatives-hot-lemon",
+          "name": "Hot Lemon",
+          "price": 70
+        },
+        {
+          "id": "coffee-alternatives-hot-lemon-honey",
+          "name": "Hot Lemon Honey",
+          "price": 100
+        },
+        {
+          "id": "coffee-alternatives-hot-lemon-honey-ginger",
+          "name": "Hot Lemon Honey Ginger",
+          "price": 110
+        },
+        {
+          "id": "coffee-alternatives-lemon-tea",
+          "name": "Lemon Tea",
+          "price": 80
+        },
+        {
+          "id": "coffee-alternatives-lemon-grass-tea",
+          "name": "Lemon Grass Tea",
+          "price": 50
+        },
+        {
+          "id": "coffee-alternatives-ginger-lemon-tea",
+          "name": "Ginger Lemon Tea",
+          "price": 80
+        },
+        {
+          "id": "coffee-alternatives-milk-tea",
+          "name": "Milk Tea",
+          "price": 80
+        },
+        {
+          "id": "coffee-alternatives-masala-tea",
+          "name": "Masala Tea",
+          "price": 90
+        },
+        {
+          "id": "coffee-alternatives-peach-apple-lemon-tea",
+          "name": "Peach / Apple / Lemon Tea",
+          "price": 150
+        }
+      ]
+    },
+    {
+      "id": "frappe",
+      "title": "Frappe / Blended",
+      "kind": "list",
+      "items": [
+        {
+          "id": "frappe-mocha",
+          "name": "Mocha",
+          "price": 250
+        },
+        {
+          "id": "frappe-vanilla",
+          "name": "Vanilla",
+          "price": 250
+        },
+        {
+          "id": "frappe-caramel",
+          "name": "Caramel",
+          "price": 250
+        },
+        {
+          "id": "frappe-strawberry",
+          "name": "Strawberry",
+          "price": 250
+        },
+        {
+          "id": "frappe-oreo",
+          "name": "Oreo",
+          "price": 270
+        },
+        {
+          "id": "frappe-choco-chips",
+          "name": "Choco Chips",
+          "price": 270
+        }
+      ]
+    },
+    {
+      "id": "iced",
+      "title": "Iced Drinks",
+      "kind": "list",
+      "items": [
+        {
+          "id": "iced-iced-americano",
+          "name": "Iced Americano",
+          "price": 180
+        },
+        {
+          "id": "iced-iced-latte",
+          "name": "Iced Latte",
+          "price": 200
+        },
+        {
+          "id": "iced-iced-caramel-macchiato",
+          "name": "Iced Caramel Macchiato",
+          "price": 240
+        },
+        {
+          "id": "iced-iced-mocha",
+          "name": "Iced Mocha",
+          "price": 220
+        },
+        {
+          "id": "iced-peach-lemon-apple-ice-tea",
+          "name": "Peach / Lemon / Apple Ice Tea",
+          "price": 180
+        },
+        {
+          "id": "iced-cold-lemon",
+          "name": "Cold Lemon",
+          "price": 120
+        }
+      ]
+    },
+    {
+      "id": "juice",
+      "title": "Fresh Juice",
+      "kind": "list",
+      "items": [
+        {
+          "id": "juice-watermelon-juice",
+          "name": "Watermelon Juice",
+          "price": 180
+        },
+        {
+          "id": "juice-orange-juice",
+          "name": "Orange Juice",
+          "price": 220
+        }
+      ]
+    },
+    {
+      "id": "milkshakes",
+      "title": "Milkshakes",
+      "kind": "list",
+      "items": [
+        {
+          "id": "milkshakes-chocolate-milkshake",
+          "name": "Chocolate Milkshake",
+          "price": 200
+        },
+        {
+          "id": "milkshakes-strawberry-milkshake",
+          "name": "Strawberry Milkshake",
+          "price": 200
+        },
+        {
+          "id": "milkshakes-vanilla-milkshake",
+          "name": "Vanilla Milkshake",
+          "price": 200
+        },
+        {
+          "id": "milkshakes-oreo-milkshake",
+          "name": "Oreo Milkshake",
+          "price": 220
+        }
+      ]
+    },
+    {
+      "id": "lassi",
+      "title": "Lassi & Smoothies",
+      "kind": "list",
+      "items": [
+        {
+          "id": "lassi-banana-lassi",
+          "name": "Banana Lassi",
+          "price": 140
+        },
+        {
+          "id": "lassi-sweet-lassi",
+          "name": "Sweet Lassi",
+          "price": 120
+        },
+        {
+          "id": "lassi-seasonal-smoothies",
+          "name": "Seasonal Smoothies",
+          "price": 250
+        }
+      ]
+    },
+    {
+      "id": "lemonade",
+      "title": "Lemonade",
+      "kind": "list",
+      "items": [
+        {
+          "id": "lemonade-blended-lemonade",
+          "name": "Blended Lemonade",
+          "price": 180
+        },
+        {
+          "id": "lemonade-mint-lemonade",
+          "name": "Mint Lemonade",
+          "price": 200
+        },
+        {
+          "id": "lemonade-strawberry-lemonade",
+          "name": "Strawberry Lemonade",
+          "price": 220
+        },
+        {
+          "id": "lemonade-mojito",
+          "name": "Mojito",
+          "price": 220
+        }
+      ]
+    },
+    {
+      "id": "cold-drink",
+      "title": "Cold Drink",
+      "kind": "list",
+      "items": [
+        {
+          "id": "cold-drink-coke-fanta-sprite-soda",
+          "name": "Coke / Fanta / Sprite / Soda",
+          "price": 80
+        },
+        {
+          "id": "cold-drink-coke-with-lemon",
+          "name": "Coke with Lemon",
+          "price": 100
+        },
+        {
+          "id": "cold-drink-mineral-water",
+          "name": "Mineral Water",
+          "price": 50
+        },
+        {
+          "id": "cold-drink-water-small",
+          "name": "Water (Small)",
+          "price": 30
+        }
+      ]
+    },
+    {
+      "id": "veg-snacks",
+      "title": "Vegetarian Snacks",
+      "kind": "list",
+      "items": [
+        {
+          "id": "veg-snacks-plain-peanuts",
+          "name": "Plain Peanuts",
+          "price": 140
+        },
+        {
+          "id": "veg-snacks-black-bhattmas",
+          "name": "Black Bhattmas",
+          "price": 160
+        },
+        {
+          "id": "veg-snacks-french-fries",
+          "name": "French Fries",
+          "price": 190
+        },
+        {
+          "id": "veg-snacks-chilly-crispy-potato",
+          "name": "Chilly Crispy Potato",
+          "price": 280
+        },
+        {
+          "id": "veg-snacks-chips-chilly",
+          "name": "Chips Chilly",
+          "price": 250
+        },
+        {
+          "id": "veg-snacks-dry-papad",
+          "name": "Dry Papad",
+          "price": 70
+        },
+        {
+          "id": "veg-snacks-fry-papad",
+          "name": "Fry Papad",
+          "price": 80
+        },
+        {
+          "id": "veg-snacks-masala-papad",
+          "name": "Masala Papad",
+          "price": 150
+        },
+        {
+          "id": "veg-snacks-mushroom-chilly",
+          "name": "Mushroom Chilly",
+          "price": 250
+        },
+        {
+          "id": "veg-snacks-paneer-chilly",
+          "name": "Paneer Chilly",
+          "price": 270
+        },
+        {
+          "id": "veg-snacks-paneer-pakoda",
+          "name": "Paneer Pakoda",
+          "price": 250
+        },
+        {
+          "id": "veg-snacks-veg-tempura",
+          "name": "Veg Tempura",
+          "price": 250
+        },
+        {
+          "id": "veg-snacks-egg-pakoda",
+          "name": "Egg Pakoda",
+          "price": 180
+        },
+        {
+          "id": "veg-snacks-cheese-balls",
+          "name": "Cheese Balls",
+          "price": 320
+        },
+        {
+          "id": "veg-snacks-cheese-pop-corn",
+          "name": "Cheese Pop-Corn",
+          "price": 100
+        },
+        {
+          "id": "veg-snacks-cheese-slice",
+          "name": "Cheese Slice",
+          "price": 300
+        },
+        {
+          "id": "veg-snacks-mustang-aloo",
+          "name": "Mustang Aloo",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "sadeko",
+      "title": "Sadeko",
+      "kind": "list",
+      "items": [
+        {
+          "id": "sadeko-peanuts-sadeko",
+          "name": "Peanuts Sadeko",
+          "price": 180
+        },
+        {
+          "id": "sadeko-bhattmas-sadeko",
+          "name": "Bhattmas Sadeko",
+          "price": 190
+        },
+        {
+          "id": "sadeko-aloo-sadeko",
+          "name": "Aloo Sadeko",
+          "price": 130
+        },
+        {
+          "id": "sadeko-waiwai-sadeko",
+          "name": "Waiwai Sadeko",
+          "price": 100
+        },
+        {
+          "id": "sadeko-waiwai-sukuti-sadeko",
+          "name": "Waiwai Sukuti Sadeko",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "salad",
+      "title": "Salad",
+      "kind": "list",
+      "items": [
+        {
+          "id": "salad-green-salad",
+          "name": "Green Salad",
+          "price": 200
+        },
+        {
+          "id": "salad-fruit-salad",
+          "name": "Fruit Salad",
+          "price": 280
+        }
+      ]
+    },
+    {
+      "id": "chicken-snacks",
+      "title": "Chicken Snacks",
+      "kind": "list",
+      "image": "cat-snacks",
+      "badge": "bestseller",
+      "items": [
+        {
+          "id": "chicken-snacks-chicken-fry-nepali-style",
+          "name": "Chicken Fry (Nepali Style)",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-crispy-chicken",
+          "name": "Crispy Chicken",
+          "price": 320
+        },
+        {
+          "id": "chicken-snacks-chicken-sadheko",
+          "name": "Chicken Sadheko",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-chicken-nuggets",
+          "name": "Chicken Nuggets",
+          "price": 320
+        },
+        {
+          "id": "chicken-snacks-chicken-chilly-boneless",
+          "name": "Chicken Chilly Boneless",
+          "price": 320
+        },
+        {
+          "id": "chicken-snacks-chicken-choyella",
+          "name": "Chicken Choyella",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-chicken-sekuwa",
+          "name": "Chicken Sekuwa",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-chicken-sausage-fry",
+          "name": "Chicken Sausage Fry",
+          "price": 180
+        },
+        {
+          "id": "chicken-snacks-chicken-sausage-chilly",
+          "name": "Chicken Sausage Chilly",
+          "price": 200
+        },
+        {
+          "id": "chicken-snacks-chicken-drumstick-fry",
+          "name": "Chicken Drumstick Fry",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-chicken-drumstick-chilly",
+          "name": "Chicken Drumstick Chilly",
+          "price": 300
+        },
+        {
+          "id": "chicken-snacks-chicken-wings-fry",
+          "name": "Chicken Wings Fry",
+          "price": 280
+        },
+        {
+          "id": "chicken-snacks-chicken-wings-chilly",
+          "name": "Chicken Wings Chilly",
+          "price": 300
+        },
+        {
+          "id": "chicken-snacks-chicken-pangra",
+          "name": "Chicken Pangra",
+          "price": 200
+        },
+        {
+          "id": "chicken-snacks-chicken-manchurian",
+          "name": "Chicken Manchurian",
+          "price": 300
+        }
+      ]
+    },
+    {
+      "id": "buff-snacks",
+      "title": "Buff Snacks",
+      "kind": "list",
+      "items": [
+        {
+          "id": "buff-snacks-boiled-buff",
+          "name": "Boiled Buff",
+          "price": 250
+        },
+        {
+          "id": "buff-snacks-buff-fry",
+          "name": "Buff Fry",
+          "price": 250
+        },
+        {
+          "id": "buff-snacks-buff-fry-sausage",
+          "name": "Buff Fry Sausage",
+          "price": 200
+        },
+        {
+          "id": "buff-snacks-buff-sausage-chilly",
+          "name": "Buff Sausage Chilly",
+          "price": 250
+        },
+        {
+          "id": "buff-snacks-buff-meatball-fry",
+          "name": "Buff Meatball Fry",
+          "price": 250
+        },
+        {
+          "id": "buff-snacks-buff-meatball-chilly",
+          "name": "Buff Meatball Chilly",
+          "price": 300
+        },
+        {
+          "id": "buff-snacks-buff-chilly",
+          "name": "Buff Chilly",
+          "price": 300
+        },
+        {
+          "id": "buff-snacks-anda-keema-chiura-fry",
+          "name": "Anda Keema Chiura Fry",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "pork-snacks",
+      "title": "Pork Snacks",
+      "kind": "list",
+      "items": [
+        {
+          "id": "pork-snacks-pork-chilly",
+          "name": "Pork Chilly",
+          "price": 330
+        },
+        {
+          "id": "pork-snacks-pork-tawa",
+          "name": "Pork Tawa",
+          "price": 280
+        },
+        {
+          "id": "pork-snacks-pork-sekuwa",
+          "name": "Pork Sekuwa",
+          "price": 280
+        }
+      ]
+    },
+    {
+      "id": "momo",
+      "title": "Momo",
+      "kind": "table",
+      "image": "momo-steamed",
+      "badge": "signature",
+      "columns": [
+        "Steamed",
+        "Fry / Kothey",
+        "Jhol",
+        "C. Chilly"
+      ],
+      "rows": [
+        {
+          "id": "momo-buff-momo",
+          "name": "Buff Momo",
+          "prices": [
+            190,
+            200,
+            230,
+            230
+          ]
+        },
+        {
+          "id": "momo-chicken-momo",
+          "name": "Chicken Momo",
+          "prices": [
+            210,
+            220,
+            250,
+            250
+          ]
+        },
+        {
+          "id": "momo-paneer-momo",
+          "name": "Paneer Momo",
+          "prices": [
+            230,
+            240,
+            270,
+            270
+          ]
+        }
+      ]
+    },
+    {
+      "id": "newari",
+      "title": "Newari Special",
+      "kind": "list",
+      "image": "cat-newari",
+      "badge": "chefs",
+      "items": [
+        {
+          "id": "newari-buff-jibro-fry",
+          "name": "Buff Jibro Fry",
+          "price": 280
+        },
+        {
+          "id": "newari-buff-jibro-chilly",
+          "name": "Buff Jibro Chilly",
+          "price": 350
+        },
+        {
+          "id": "newari-foksho-fry",
+          "name": "Foksho Fry",
+          "price": 150
+        },
+        {
+          "id": "newari-buff-anda-keema",
+          "name": "Buff Anda Keema",
+          "price": 150
+        },
+        {
+          "id": "newari-sapumhicha",
+          "name": "Sapumhicha",
+          "price": 350
+        },
+        {
+          "id": "newari-buff-tauko-fry",
+          "name": "Buff Tauko Fry",
+          "price": 300
+        },
+        {
+          "id": "newari-buff-tauko-chilly",
+          "name": "Buff Tauko Chilly",
+          "price": 350
+        },
+        {
+          "id": "newari-buff-choyella",
+          "name": "Buff Choyella",
+          "price": 300
+        },
+        {
+          "id": "newari-buff-sekuwa",
+          "name": "Buff Sekuwa",
+          "price": 300
+        },
+        {
+          "id": "newari-buff-fry-sukuti",
+          "name": "Buff Fry Sukuti",
+          "price": 350
+        },
+        {
+          "id": "newari-buff-sadheko-sukuti",
+          "name": "Buff Sadheko Sukuti",
+          "price": 380
+        },
+        {
+          "id": "newari-buff-bhutan",
+          "name": "Buff Bhutan",
+          "price": 150
+        },
+        {
+          "id": "newari-alu-tama",
+          "name": "Alu Tama",
+          "price": 80
+        }
+      ]
+    },
+    {
+      "id": "khaja",
+      "title": "Khaja Set",
+      "kind": "list",
+      "note": "Choyella, Alu Tama, Black Bhatmas, Plain Bara, Chura, Egg, Alu Sadeko",
+      "items": [
+        {
+          "id": "khaja-veg-khaja-set",
+          "name": "Veg Khaja Set",
+          "price": 350
+        },
+        {
+          "id": "khaja-buff-chicken-khaja-set",
+          "name": "Buff / Chicken Khaja Set",
+          "price": 400
+        }
+      ]
+    },
+    {
+      "id": "chatamari",
+      "title": "Chatamari",
+      "kind": "list",
+      "items": [
+        {
+          "id": "chatamari-veg-chatamari",
+          "name": "Veg Chatamari",
+          "price": 100
+        },
+        {
+          "id": "chatamari-buff-chicken-chatamari",
+          "name": "Buff / Chicken Chatamari",
+          "price": 150
+        },
+        {
+          "id": "chatamari-egg-chatamari-with-veg",
+          "name": "Egg Chatamari with Veg",
+          "price": 130
+        },
+        {
+          "id": "chatamari-buff-egg-chatamari",
+          "name": "Buff Egg Chatamari",
+          "price": 170
+        },
+        {
+          "id": "chatamari-chicken-egg-chatamari",
+          "name": "Chicken Egg Chatamari",
+          "price": 170
+        },
+        {
+          "id": "chatamari-mix-chatamari",
+          "name": "Mix Chatamari",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "yomari",
+      "title": "Yomari",
+      "kind": "list",
+      "items": [
+        {
+          "id": "yomari-chaku-yomari",
+          "name": "Chaku Yomari",
+          "price": 70
+        },
+        {
+          "id": "yomari-khuwa-yomari",
+          "name": "Khuwa Yomari",
+          "price": 70
+        },
+        {
+          "id": "yomari-chocolate-yomari",
+          "name": "Chocolate Yomari",
+          "price": 70
+        }
+      ]
+    },
+    {
+      "id": "bara",
+      "title": "Bara",
+      "kind": "list",
+      "items": [
+        {
+          "id": "bara-plain-bara",
+          "name": "Plain Bara",
+          "price": 100
+        },
+        {
+          "id": "bara-buff-chicken-bara",
+          "name": "Buff / Chicken Bara",
+          "price": 150
+        },
+        {
+          "id": "bara-egg-bara",
+          "name": "Egg Bara",
+          "price": 120
+        },
+        {
+          "id": "bara-buff-egg-bara",
+          "name": "Buff Egg Bara",
+          "price": 170
+        },
+        {
+          "id": "bara-chicken-egg-bara",
+          "name": "Chicken Egg Bara",
+          "price": 170
+        },
+        {
+          "id": "bara-mix-bara",
+          "name": "Mix Bara",
+          "price": 200
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "title": "Pizza",
+      "kind": "table",
+      "image": "pizza-margherita",
+      "badge": "favorite",
+      "columns": [
+        "Small 9\"",
+        "Medium 10\"",
+        "Large 12\""
+      ],
+      "rows": [
+        {
+          "id": "pizza-cheese-pizza",
+          "name": "Cheese Pizza",
+          "prices": [
+            420,
+            530,
+            680
+          ]
+        },
+        {
+          "id": "pizza-chicken-pizza",
+          "name": "Chicken Pizza",
+          "prices": [
+            450,
+            570,
+            730
+          ]
+        },
+        {
+          "id": "pizza-mushroom-pizza",
+          "name": "Mushroom Pizza",
+          "prices": [
+            450,
+            570,
+            730
+          ]
+        },
+        {
+          "id": "pizza-sausage-pizza",
+          "name": "Sausage Pizza",
+          "prices": [
+            450,
+            570,
+            730
+          ]
+        },
+        {
+          "id": "pizza-mixed-pizza",
+          "name": "Mixed Pizza",
+          "prices": [
+            480,
+            570,
+            780
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fried-rice",
+      "title": "Fried Rice",
+      "kind": "list",
+      "items": [
+        {
+          "id": "fried-rice-veg-fry-rice",
+          "name": "Veg Fry Rice",
+          "price": 200
+        },
+        {
+          "id": "fried-rice-egg-fry-rice",
+          "name": "Egg Fry Rice",
+          "price": 220
+        },
+        {
+          "id": "fried-rice-buff-fry-rice",
+          "name": "Buff Fry Rice",
+          "price": 270
+        },
+        {
+          "id": "fried-rice-mix-fry-rice",
+          "name": "Mix Fry Rice",
+          "price": 300
+        },
+        {
+          "id": "fried-rice-plain-rice",
+          "name": "Plain Rice",
+          "price": 150
+        }
+      ]
+    },
+    {
+      "id": "noodles",
+      "title": "Keema Noodles",
+      "kind": "list",
+      "image": "cat-noodles",
+      "items": [
+        {
+          "id": "noodles-buff-keema-noodles",
+          "name": "Buff Keema Noodles",
+          "price": 290
+        },
+        {
+          "id": "noodles-chicken-keema-noodles",
+          "name": "Chicken Keema Noodles",
+          "price": 290
+        }
+      ]
+    },
+    {
+      "id": "chopsuey",
+      "title": "Chopsuey",
+      "kind": "list",
+      "items": [
+        {
+          "id": "chopsuey-american-chopsuey-veg",
+          "name": "American Chopsuey Veg",
+          "price": 250
+        },
+        {
+          "id": "chopsuey-american-chopsuey-non-veg",
+          "name": "American Chopsuey Non-Veg",
+          "price": 310
+        },
+        {
+          "id": "chopsuey-chinese-chopsuey-veg",
+          "name": "Chinese Chopsuey Veg",
+          "price": 250
+        },
+        {
+          "id": "chopsuey-chinese-chopsuey-non-veg",
+          "name": "Chinese Chopsuey Non-Veg",
+          "price": 310
+        }
+      ]
+    },
+    {
+      "id": "chowmein",
+      "title": "Chowmein / Thukpa",
+      "kind": "list",
+      "image": "cat",
+      "items": [
+        {
+          "id": "chowmein-veg",
+          "name": "Veg",
+          "price": 170
+        },
+        {
+          "id": "chowmein-egg",
+          "name": "Egg",
+          "price": 220
+        },
+        {
+          "id": "chowmein-buff-chicken",
+          "name": "Buff / Chicken",
+          "price": 250
+        },
+        {
+          "id": "chowmein-mix",
+          "name": "Mix",
+          "price": 280
+        }
+      ]
+    },
+    {
+      "id": "sizzler",
+      "title": "Sizzler",
+      "kind": "list",
+      "items": [
+        {
+          "id": "sizzler-veg-sizzler",
+          "name": "Veg Sizzler",
+          "price": 400
+        },
+        {
+          "id": "sizzler-buff-chicken-sizzler",
+          "name": "Buff / Chicken Sizzler",
+          "price": 550
+        },
+        {
+          "id": "sizzler-pork-sizzler",
+          "name": "Pork Sizzler",
+          "price": 550
+        }
+      ]
+    },
+    {
+      "id": "beer",
+      "title": "Beer",
+      "kind": "list",
+      "note": "Barahsinghe · Sherpa · Imported",
+      "image": "cat-beer",
+      "badge": "special",
+      "items": [
+        {
+          "id": "beer-draught-beer-550ml-glass",
+          "name": "Draught Beer 550ml Glass",
+          "price": 550
+        },
+        {
+          "id": "beer-draught-beer-1450ml-jar",
+          "name": "Draught Beer 1450ml Jar",
+          "price": 1450
+        },
+        {
+          "id": "beer-pilsner-650ml",
+          "name": "Pilsner 650ml",
+          "price": 620
+        },
+        {
+          "id": "beer-pilsner-can",
+          "name": "Pilsner Can",
+          "price": 425
+        },
+        {
+          "id": "beer-hazy-ipa-650ml",
+          "name": "Hazy IPA 650ml",
+          "price": 695
+        },
+        {
+          "id": "beer-hazy-ipa-350ml",
+          "name": "Hazy IPA 350ml",
+          "price": 355
+        },
+        {
+          "id": "beer-carlsberg-650ml-bottle",
+          "name": "Carlsberg 650ml Bottle",
+          "price": 705
+        },
+        {
+          "id": "beer-carlsberg-can",
+          "name": "Carlsberg Can",
+          "price": 565
+        },
+        {
+          "id": "beer-gorkha-strong",
+          "name": "Gorkha Strong",
+          "price": 520
+        },
+        {
+          "id": "beer-gorkha-extra-strong-330ml",
+          "name": "Gorkha Extra Strong 330ml",
+          "price": 275
+        },
+        {
+          "id": "beer-tuborg",
+          "name": "Tuborg",
+          "price": 630
+        },
+        {
+          "id": "beer-tuborg-can",
+          "name": "Tuborg Can",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "id": "sherpa",
+      "title": "Sherpa Craft Beer",
+      "kind": "table",
+      "columns": [
+        "Glass",
+        "Big Glass",
+        "Pitcher"
+      ],
+      "rows": [
+        {
+          "id": "sherpa-khumbu-kolsch",
+          "name": "Khumbu Kolsch",
+          "prices": [
+            400,
+            600,
+            1600
+          ]
+        },
+        {
+          "id": "sherpa-himalayan-red",
+          "name": "Himalayan Red",
+          "prices": [
+            400,
+            600,
+            1600
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hard-drinks",
+      "title": "Hard Drinks",
+      "kind": "table",
+      "columns": [
+        "60ml",
+        "Qtr",
+        "Half",
+        "Full"
+      ],
+      "rows": [
+        {
+          "id": "hard-drinks-khukuri-rum",
+          "name": "Khukuri Rum",
+          "prices": [
+            260,
+            780,
+            1560,
+            3120
+          ]
+        },
+        {
+          "id": "hard-drinks-khukuri-rum-white",
+          "name": "Khukuri Rum White",
+          "prices": [
+            260,
+            780,
+            1560,
+            3120
+          ]
+        },
+        {
+          "id": "hard-drinks-khukuri-rum-black",
+          "name": "Khukuri Rum Black",
+          "prices": [
+            310,
+            920,
+            1840,
+            3680
+          ]
+        },
+        {
+          "id": "hard-drinks-8848-vodka",
+          "name": "8848 Vodka",
+          "prices": [
+            275,
+            820,
+            1740,
+            3280
+          ]
+        },
+        {
+          "id": "hard-drinks-ruslan-vodka",
+          "name": "Ruslan Vodka",
+          "prices": [
+            275,
+            820,
+            1740,
+            3280
+          ]
+        },
+        {
+          "id": "hard-drinks-gorkha-guns",
+          "name": "Gorkha & Guns",
+          "prices": [
+            370,
+            1100,
+            2200,
+            4400
+          ]
+        },
+        {
+          "id": "hard-drinks-signature",
+          "name": "Signature",
+          "prices": [
+            300,
+            885,
+            1770,
+            3540
+          ]
+        },
+        {
+          "id": "hard-drinks-old-durbar-regular",
+          "name": "Old Durbar Regular",
+          "prices": [
+            340,
+            1200,
+            2040,
+            4080
+          ]
+        },
+        {
+          "id": "hard-drinks-old-durbar-black-chimney",
+          "name": "Old Durbar Black Chimney",
+          "prices": [
+            420,
+            1260,
+            2520,
+            5040
+          ]
+        },
+        {
+          "id": "hard-drinks-black-oak",
+          "name": "Black Oak",
+          "prices": [
+            180,
+            540,
+            1080,
+            2160
+          ]
+        },
+        {
+          "id": "hard-drinks-golden-oak",
+          "name": "Golden Oak",
+          "prices": [
+            150,
+            440,
+            880,
+            1760
+          ]
+        },
+        {
+          "id": "hard-drinks-mustang",
+          "name": "Mustang",
+          "prices": [
+            130,
+            390,
+            780,
+            1560
+          ]
+        },
+        {
+          "id": "hard-drinks-highlander-vodka",
+          "name": "Highlander Vodka",
+          "prices": [
+            150,
+            440,
+            880,
+            1750
+          ]
+        },
+        {
+          "id": "hard-drinks-honey-hunter-rum",
+          "name": "Honey Hunter Rum",
+          "prices": [
+            290,
+            860,
+            1710,
+            3410
+          ]
+        },
+        {
+          "id": "hard-drinks-governor-vodka",
+          "name": "Governor Vodka",
+          "prices": [
+            250,
+            740,
+            1480,
+            2950
+          ]
+        },
+        {
+          "id": "hard-drinks-nude-vodka",
+          "name": "Nude Vodka",
+          "prices": [
+            270,
+            800,
+            1600,
+            3200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wine",
+      "title": "Wine & Punch",
+      "kind": "list",
+      "items": [
+        {
+          "id": "wine-wine-bottle",
+          "name": "Wine (Bottle)",
+          "price": 1440
+        },
+        {
+          "id": "wine-hot-rum-punch",
+          "name": "Hot Rum Punch",
+          "price": 350
+        }
+      ]
+    },
+    {
+      "id": "shisha",
+      "title": "Shisha / Hukka",
+      "kind": "list",
+      "note": "Mint · Double Apple · Blueberry · Strawberry",
+      "items": [
+        {
+          "id": "shisha-hukka",
+          "name": "Hukka",
+          "price": 350
+        },
+        {
+          "id": "shisha-cloud-hukka",
+          "name": "Cloud Hukka",
+          "price": 600
+        },
+        {
+          "id": "shisha-extra-coil",
+          "name": "Extra Coil",
+          "price": 50
+        }
+      ]
+    },
+    {
+      "id": "cigarette",
+      "title": "Cigarette",
+      "kind": "list",
+      "items": [
+        {
+          "id": "cigarette-surya-1-piece",
+          "name": "Surya (1 piece)",
+          "price": 30
+        },
+        {
+          "id": "cigarette-mini-pack-10-pieces",
+          "name": "Mini Pack (10 pieces)",
+          "price": 250
+        },
+        {
+          "id": "cigarette-full-pack",
+          "name": "Full Pack",
+          "price": 450
+        },
+        {
+          "id": "cigarette-sikhar-ice",
+          "name": "Sikhar Ice",
+          "price": 25
+        },
+        {
+          "id": "cigarette-camel",
+          "name": "Camel",
+          "price": 25
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "key": "signature",
+      "emoji": "⭐",
+      "label": "Signature",
+      "builtIn": true,
+      "image": "momo-steamed",
+      "items": [
+        "momo-chicken-momo#0",
+        "momo-buff-momo#2",
+        "chicken-snacks-chicken-sekuwa",
+        "khaja-buff-chicken-khaja-set",
+        "chatamari-buff-chicken-chatamari"
+      ]
+    },
+    {
+      "key": "bestseller",
+      "emoji": "🔥",
+      "label": "Best Seller",
+      "builtIn": true,
+      "image": "cat-snacks",
+      "items": [
+        "chicken-snacks-crispy-chicken",
+        "chicken-snacks-chicken-chilly-boneless",
+        "momo-buff-momo#0",
+        "chowmein-buff-chicken",
+        "beer-gorkha-strong"
+      ]
+    },
+    {
+      "key": "chefs",
+      "emoji": "👨‍🍳",
+      "label": "Chef's Pick",
+      "builtIn": true,
+      "image": "cat-newari",
+      "items": [
+        "newari-buff-choyella",
+        "pork-snacks-pork-sekuwa",
+        "pizza-mixed-pizza#1",
+        "bara-egg-bara",
+        "sizzler-buff-chicken-sizzler"
+      ]
+    },
+    {
+      "key": "favorite",
+      "emoji": "❤️",
+      "label": "Customer Favorite",
+      "builtIn": true,
+      "image": "pizza-margherita",
+      "items": [
+        "momo-chicken-momo#1",
+        "chowmein-veg",
+        "noodles-chicken-keema-noodles",
+        "newari-buff-sadheko-sukuti",
+        "iced-iced-latte"
+      ]
+    },
+    {
+      "key": "special",
+      "emoji": "✨",
+      "label": "Special",
+      "builtIn": true,
+      "image": "cat-beer",
+      "items": [
+        "yomari-chaku-yomari",
+        "chowmein-mix",
+        "shisha-hukka",
+        "wine-wine-bottle",
+        "khaja-buff-chicken-khaja-set"
+      ]
+    },
+    {
+      "key": "popular",
+      "emoji": "❤️",
+      "label": "Popular",
+      "builtIn": true,
+      "image": "cat-coffee",
+      "items": [
+        "coffee-cappuccino",
+        "coffee-caramel-latte",
+        "milkshakes-oreo-milkshake",
+        "chicken-snacks-chicken-sadheko",
+        "pizza-cheese-pizza#0"
+      ]
+    }
+  ]
+}
