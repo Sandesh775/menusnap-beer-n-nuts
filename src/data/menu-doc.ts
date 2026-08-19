@@ -71,9 +71,9 @@ export type ListSection = {
   id: string;
   title: string;
   kind: "list";
-  note?: string;
-  image?: string;
-  badge?: string;
+  note?: string | undefined;
+  image?: string | undefined;
+  badge?: string | undefined;
   items: SimpleItem[];
 };
 
@@ -81,9 +81,9 @@ export type TableSection = {
   id: string;
   title: string;
   kind: "table";
-  note?: string;
-  image?: string;
-  badge?: string;
+  note?: string | undefined;
+  image?: string | undefined;
+  badge?: string | undefined;
   columns: string[];
   rows: { name: string; prices: (number | string)[] }[];
 };
@@ -94,7 +94,7 @@ export type Highlight = {
   key: string;
   emoji: string;
   label: string;
-  image?: string;
+  image?: string | undefined;
   items: SimpleItem[];
 };
 
