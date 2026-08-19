@@ -1563,7 +1563,9 @@
       "items": [
         "momo-chicken-momo#0",
         "momo-buff-momo#2",
-        "chicken-snacks-chicken-sekuwa"
+        "chicken-snacks-chicken-sekuwa",
+        "khaja-buff-chicken-khaja-set",
+        "chatamari-buff-chicken-chatamari"
       ]
     },
     {
@@ -1575,7 +1577,9 @@
       "items": [
         "chicken-snacks-crispy-chicken",
         "chicken-snacks-chicken-chilly-boneless",
-        "momo-buff-momo#0"
+        "momo-buff-momo#0",
+        "chowmein-buff-chicken",
+        "beer-gorkha-strong"
       ]
     },
     {
@@ -1588,7 +1592,8 @@
         "newari-buff-choyella",
         "pork-snacks-pork-sekuwa",
         "pizza-mixed-pizza#1",
-        "bara-egg-bara"
+        "bara-egg-bara",
+        "sizzler-buff-chicken-sizzler"
       ]
     },
     {
@@ -1601,7 +1606,8 @@
         "momo-chicken-momo#1",
         "chowmein-veg",
         "noodles-chicken-keema-noodles",
-        "newari-buff-sadheko-sukuti"
+        "newari-buff-sadheko-sukuti",
+        "iced-iced-latte"
       ]
     },
     {
@@ -1612,7 +1618,10 @@
       "image": "cat-beer",
       "items": [
         "yomari-chaku-yomari",
-        "chowmein-mix"
+        "chowmein-mix",
+        "shisha-hukka",
+        "wine-wine-bottle",
+        "khaja-buff-chicken-khaja-set"
       ]
     },
     {
