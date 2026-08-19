@@ -1,13 +1,20 @@
 import type { Section } from "@/data/menu";
-import { sectionBadge, badgeMeta } from "@/data/highlights";
+import { DEFAULT_HIGHLIGHTS } from "@/data/highlights";
 
 function fmt(v: number | string) {
   return typeof v === "number" ? v.toLocaleString("en-IN") : v;
 }
 
-export function MenuSection({ section }: { section: Section }) {
-  const badgeKey = sectionBadge[section.id];
-  const badge = badgeKey ? badgeMeta[badgeKey] : null;
+export function MenuSection({
+  section,
+  badges,
+}: {
+  section: Section;
+  badges?: { key: string; emoji: string; label: string }[];
+}) {
+  const all = badges ?? DEFAULT_HIGHLIGHTS;
+  const badge = section.badge ? all.find((b) => b.key === section.badge) : null;
+
   return (
     <section id={section.id} className="scroll-mt-16 pt-11">
       <header className="mb-4">
